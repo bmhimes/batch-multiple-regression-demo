@@ -116,5 +116,15 @@ module BatchMultipleRegression
 end
 
 if __FILE__ == $0
+  # Determine the dataset from the first command-line argument.
+  datasetFilePath = ARGV[0]
 
+  # If a dataset was not supplied, then default to the file data.csv.
+  datasetFilePath ||= 'data.csv'
+
+  # Create the program.
+  defaultProgram = TrainingProgram.new
+
+  # Load the dataset.
+  defaultProgram.load_dataset(datasetFilePath)
 end
